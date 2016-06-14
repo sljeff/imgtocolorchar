@@ -1,3 +1,8 @@
+##### need Pillow
+```
+pip install Pillow
+```
+
 >img/1.jpg  
 ![](img/1.jpg)
 
