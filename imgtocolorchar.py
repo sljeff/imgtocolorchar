@@ -57,23 +57,23 @@ def make_char_img(imgs):
     width, height = img_greyscale.size
 
     if model == 0:
-        for h in xrange(height):
-            for w in xrange(width):
-                pic_str += chars[int(pix_greyscale[w, h]) * 14 / 255]
+        for h in range(height):
+            for w in range(width):
+                pic_str += chars[int(pix_greyscale[w, h]) * 14 // 255]
             pic_str += '\n'
     elif model == 1:
-        for h in xrange(height):
-            for w in xrange(width):
+        for h in range(height):
+            for w in range(width):
                 # pic_str += getColor(pix_rgb[w, h])
-                pic_str += colors.values()[int(pix_greyscale[w, h]) * 7 / 255]
-                pic_str += chars[int(pix_greyscale[w, h]) * 14 / 255]
+                pic_str += list(colors.values())[int(pix_greyscale[w, h]) * 7 // 255]
+                pic_str += chars[int(pix_greyscale[w, h]) * 14 // 255]
             pic_str += '\n'
         pic_str += colors['Reset']
     elif model == 2:
-        for h in xrange(height):
-            for w in xrange(width):
+        for h in range(height):
+            for w in range(width):
                 pic_str += getColor(pix_rgb[w, h])
-                pic_str += chars[int(pix_greyscale[w, h]) * 14 / 255]
+                pic_str += chars[int(pix_greyscale[w, h]) * 14 // 255]
             pic_str += '\n'
         pic_str += colors['Reset']
 
